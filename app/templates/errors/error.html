@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block title %}{{ code }} · {{ title }}{% endblock %}
+{% block page_title %}{{ title }}{% endblock %}
+{% block content %}<section class="panel empty-state"><span class="error-code">{{ code }}</span><h2>{{ title }}</h2><p>{{ message }}</p><a class="btn btn-primary" href="{{ url_for('main.dashboard') }}">Voltar ao painel</a></section>{% endblock %}
+{% block public_content %}<main class="public-error"><section class="panel empty-state"><span class="error-code">{{ code }}</span><h2>{{ title }}</h2><p>{{ message }}</p><a class="btn btn-primary" href="{{ url_for('auth.login') }}">Voltar ao acesso</a></section></main>{% endblock %}

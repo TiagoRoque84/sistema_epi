@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Entrar{% endblock %}
+{% block body_class %}login-page{% endblock %}
+{% block public_content %}
+<main class="login-shell">
+  <section class="login-brand-panel" aria-label="Grupo Transer">
+    <img src="{{ url_for('static', filename='img/transer-header.png') }}" alt="Grupo Transer" class="login-logo">
+    <div class="login-brand-copy">
+      <span class="pill">Uso interno</span>
+      <h1>Controle de EPIs com segurança e rastreabilidade.</h1>
+      <p>Estoque, solicitações, entregas e comprovantes assinados em um único sistema.</p>
+    </div>
+  </section>
+  <section class="login-form-panel">
+    <div class="login-card">
+      <p class="eyebrow">Acesso seguro</p>
+      <h2>Entrar no sistema</h2>
+      <p class="muted">Use seu usuário e senha cadastrados pelo administrador.</p>
+      <form method="post" class="form-stack" novalidate>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <label class="field">
+          <span>Usuário</span>
+          <input name="username" autocomplete="username" required autofocus>
+        </label>
+        <label class="field">
+          <span>Senha</span>
+          <input name="password" type="password" autocomplete="current-password" required>
+        </label>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Entrar</button>
+      </form>
+      <p class="login-help">Problemas de acesso? Solicite a redefinição ao administrador.</p>
+    </div>
+  </section>
+</main>
+{% endblock %}
